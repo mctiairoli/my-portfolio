@@ -1,18 +1,29 @@
+/* Color Palette Variables */
+:root {
+    --primary-color: #2c3e50; /* Dark Blue/Grey */
+    --secondary-color: #3498db; /* Bright Blue */
+    --accent-color: #e74c3c; /* Red/Orange */
+    --light-bg-color: #ecf0f1; /* Light Grey */
+    --dark-text-color: #34495e; /* Dark Grey Text */
+    --light-text-color: #ffffff;
+}
+
 /* Basic body styles */
 body {
-    font-family: sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Modern Font */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--light-bg-color);
+    color: var(--dark-text-color);
     line-height: 1.6;
 }
 
 header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
+    background: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 1.5rem 0; /* Increased padding */
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 nav ul {
@@ -26,73 +37,85 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: var(--light-text-color);
     text-decoration: none;
     font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #ddd;
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
 }
 
 main {
     padding: 20px;
-    max-width: 960px; /* Limit content width for better readability */
-    margin: 20px auto; /* Center main content */
+    max-width: 1000px; /* Slightly increased max-width */
+    margin: 30px auto; /* Increased margin */
 }
 
 section {
-    padding: 25px;
-    margin-bottom: 25px;
-    background-color: #fff;
+    padding: 30px; /* Increased padding */
+    margin-bottom: 30px; /* Increased margin */
+    background-color: var(--light-text-color); /* White background for sections */
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add subtle shadow to sections */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Softer shadow */
 }
 
 h1 {
     margin-bottom: 0.5rem;
+    font-size: 2.5em; /* Larger site title */
+    color: var(--light-text-color);
 }
 
 h2 {
-    color: #333;
-    border-bottom: 2px solid #333; /* Add a line under section titles */
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--secondary-color); /* Accent color for border */
     padding-bottom: 10px;
     margin-top: 0;
+    font-size: 1.8em;
 }
 
 h3 {
-    color: #555;
+    color: var(--dark-text-color);
+    font-size: 1.3em;
 }
 
 /* Project item styling */
 .project-item {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee; /* Separator for project items */
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--light-bg-color); /* Lighter separator */
 }
 
 .project-item:last-child {
-    border-bottom: none; /* Remove border for the last project item */
+    border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
 .project-item h3 {
     margin-top: 0;
+    color: var(--secondary-color); /* Use secondary color for project titles */
 }
 
 .project-item a {
     display: inline-block;
-    background-color: #333;
-    color: #fff;
-    padding: 8px 15px;
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    padding: 10px 20px; /* Larger padding for buttons */
     text-decoration: none;
     border-radius: 5px;
     margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .project-item a:hover {
-    background-color: #555;
+    background-color: var(--accent-color); /* Change to accent on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
 }
 
 /* Contact list styling */
@@ -103,26 +126,30 @@ h3 {
 
 #contact ul li {
     margin-bottom: 10px;
+    font-size: 1.1em;
 }
 
 #contact ul li a {
-    color: #337ab7; /* Standard link color */
+    color: var(--secondary-color);
     text-decoration: none;
+    font-weight: bold;
 }
 
 #contact ul li a:hover {
+    color: var(--accent-color);
     text-decoration: underline;
 }
 
 
 footer {
     text-align: center;
-    padding: 1rem 0;
-    background: #333;
-    color: #fff;
-    position: fixed;
+    padding: 1.5rem 0; /* Increased padding */
+    background: var(--primary-color);
+    color: var(--light-text-color);
+    position: relative; /* Changed from fixed to relative */
     bottom: 0;
     width: 100%;
+    margin-top: 30px; /* Add some space above the footer */
 }
 
 /* Basic responsive design for smaller screens */
@@ -136,7 +163,5 @@ footer {
         padding-bottom: 0.5rem; /* Adjust padding for stacked nav items */
     }
 
-    footer {
-        position: relative; /* Avoid footer overlapping content on small screens */
-    }
+    /* Footer position is already relative, no specific change needed here now */
 }
